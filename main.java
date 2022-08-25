@@ -16,5 +16,16 @@ public class main {
 }
 
 class Combination {
-    static void 
+    static void combinationUtil(result, int data[], int start, int end, int index, int r){
+        if (index == r){
+            for (int j=0; j<r; j++)
+                System.out.print(data[j]+" ");
+            System.out.println("");
+            return;
+        }
+        for (int i=start; i<=end && end-i+1 >= r-index; i++){
+            data[index] = arr[i];
+            combinationUtil(arr, data, i+1, end, index+1, r);
+        }
+    }
 }
