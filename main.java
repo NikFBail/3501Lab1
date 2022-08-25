@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.io.*;
+
 /* Lab by Ryan S and Nik B.
 Setting up program to list all possible
  * permutations of n integers
@@ -11,4 +13,8 @@ public class main {
             result[i] = i;
         }
     }
+}
+
+class Combination {
+    static void 
 }
