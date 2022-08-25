@@ -8,7 +8,7 @@ import java.io.*;
     index  ---> Current index in data[]
     result.length ---> Size of a combination to be printed */
 public class Combination {
-    public static void combinationUtil(int[] result, int data[], int start, int end, int index, int r){
+    public static void combinationUtil(int[] result, int data[], int start, int end, int index){
         
         // Current combination is ready to be printed, print it
         if (index == result.length){
@@ -24,7 +24,7 @@ public class Combination {
         // at remaining positions
         for (int i=0; i<=end && end-i+1 >= result.length-index; i++){
             data[index] = result[i];
-            combinationUtil(result, data, i+1, end, index+1, result.length);
+            combinationUtil(result, data, i+1, end, index+1);
         }
     }
 
@@ -36,14 +36,14 @@ public class Combination {
         int data[]=new int[result.length];
  
         // Print all combination using temporary array 'data[]'
-        combinationUtil(result, data, 0, n-1, 0, result.length);
+        combinationUtil(result, data, 0, n-1, 0);
     }
  
     /*Driver function to check for above function*/
     public static void main(String[] args) {
-            int n;
-            int[] result = new int[n];
-            for(int i = 1; i <= n; i++) {
+            int x = 3;
+            int[] result = new int[x];
+            for(int i = 1; i <= x; i++) {
                 result[i] = i;
             }
             printCombination(result, result.length);
