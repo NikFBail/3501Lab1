@@ -2,13 +2,13 @@ import java.util.Arrays;
 import java.io.*;
 
 /* Lab by Ryan S and Nik B.*/
-/* arr[]  ---> Input Array
+/*  result[]  ---> Input Array
     data[] ---> Temporary array to store current combination
-    start & end ---> Starting and Ending indexes in arr[]
+    start & end ---> Starting and Ending indexes in result[]
     index  ---> Current index in data[]
     r ---> Size of a combination to be printed */
 public class Combination {
-    static void combinationUtil(result, int data[], int start, int end, int index, int r){
+    public static void combinationUtil(int[] result, int data[], int start, int end, int index, int r){
         
         // Current combination is ready to be printed, print it
         if (index == r){
@@ -23,14 +23,14 @@ public class Combination {
         // at index will make a combination with remaining elements
         // at remaining positions
         for (int i=start; i<=end && end-i+1 >= r-index; i++){
-            data[index] = arr[i];
-            combinationUtil(arr, data, i+1, end, index+1, r);
+            data[index] = result[i];
+            combinationUtil(result, data, i+1, end, index+1, r);
         }
     }
 
     // The main function that prints all combinations of size r
     // in arr[] of size n. This function mainly uses combinationUtil()
-    static void printCombination(int arr[], int n, int r)
+    static void printCombination(int result[], int n, int r)
     {
         // A temporary array to store all combination one by one
         int data[]=new int[r];
@@ -40,13 +40,13 @@ public class Combination {
     }
  
     /*Driver function to check for above function*/
-    public static void main {
-    
-        public static void Permutations(int n) {
+    public static void main(int n) {
             int[] result = new int[n];
             for(int i = 1; i <= n; i++) {
                 result[i] = i;
             }
-        }
+            int r = result.length;
+            // int n = result.length;
+            printCombination(result, r, r);
     }
 }
