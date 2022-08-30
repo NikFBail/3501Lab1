@@ -1,6 +1,3 @@
-import java.util.Arrays;
-import java.io.*;
-
 // Lab by Ryan S and Nik B.
 
 // Java program to print all permutations using
@@ -44,9 +41,9 @@ public class Combination {
     public static void main(String args[]) {
         long time1 = System.currentTimeMillis();
         Combination obj = new Combination();
-        int x = 4;
-        int[] arr = new int[x];
-        for(int i = 0; i < x; i++) {
+        int n = 5;
+        int[] arr = new int[n];
+        for(int i = 0; i < n; i++) {
             arr[i] = i + 1;
         }
         obj.heapPermutation(arr, arr.length, arr.length);
