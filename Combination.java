@@ -1,24 +1,21 @@
 import java.util.Arrays;
 import java.io.*;
 
-// Lab by Ryan S and Nik B.\
+// Lab by Ryan S and Nik B.
 
 // Java program to print all permutations using
 // Heap's algorithm
 public class Combination {
     // Prints the array
-    void printArr(int a[], int n)
-    {
+    public void printArr(int a[], int n) {
         for (int i = 0; i < n; i++)
             System.out.print(a[i] + " ");
         System.out.println();
     }
  
     // Generating permutation using Heap Algorithm
-    void heapPermutation(int a[], int size, int n)
-    {
-        // if size becomes 1 then prints the obtained
-        // permutation
+    public void heapPermutation(int a[], int size, int n) {
+        // if size becomes 1 then prints the obtained permutation
         if (size == 1)
             printArr(a, n);
  
@@ -45,6 +42,7 @@ public class Combination {
  
     // Driver code
     public static void main(String args[]) {
+        long time1 = System.currentTimeMillis();
         Combination obj = new Combination();
         int x = 4;
         int[] arr = new int[x];
@@ -52,5 +50,7 @@ public class Combination {
             arr[i] = i + 1;
         }
         obj.heapPermutation(arr, arr.length, arr.length);
+        long time2 = System.currentTimeMillis();
+        System.out.println(time2 - time1);
     }
 }
